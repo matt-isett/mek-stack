@@ -1,0 +1,6 @@
+[submodule "docker-metricbeat"]
+	path = docker-metricbeat
+	url = https://github.com/matt-isett/docker-metricbeat
+[submodule "elasticsearch-docker"]
+	path = elasticsearch-docker
+	url = https://github.com/elastic/elasticsearch-docker
