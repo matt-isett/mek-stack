@@ -50,11 +50,25 @@ services:
 
   dashboard:
     build: docker-metricbeat
+    environment:
+      - HOST=elasticsearch
+      - USER=elastic
+      - PASS=changeme
     links:
       - elasticsearch
-    
+    entrypoint: 
+      - sh 
+      - wait-for-elastic.sh 
+ 
   watch:
     build: watches-docker
+    environment:
+      - HOST=elasticsearch
+      - USER=elastic
+      - PASS=changeme
+
+  load-data:
+    build: load-data-docker
     environment:
       - HOST=elasticsearch
       - USER=elastic

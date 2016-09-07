@@ -21,6 +21,9 @@ clean-up-from-last-runs:
 run-es-single: pull-latest-baseimage
 	ES_NODE_COUNT=1 docker-compose up --build elasticsearch
 
+initial-run: pull-latest-baseimage
+	ES_NODE_COUNT=1 docker-compose up --build elasticsearch load-data watch dashboard kibana
+
 run-mek-stack:       
 	ES_NODE_COUNT=1 docker-compose up --build elasticsearch kibana metricbeat
 

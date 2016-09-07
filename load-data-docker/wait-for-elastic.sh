@@ -12,5 +12,5 @@ done
 >&2 echo "elasticsearch is up - executing command"
 
 echo "-------------------Loading watches-------------------"
-sh /load-watch.sh http://$USER:$PASS@$HOST:9200 cpu_watch
+sh /import_kibana_data.sh http://$USER:$PASS@$HOST:9200
 

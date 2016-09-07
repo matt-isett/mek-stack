@@ -1,0 +1,11 @@
+curl -s -o /dev/null -X DELETE $1/.kibana -u elastic:changeme
+es_response=$(curl -s -w "%{http_code}" -o /dev/null -X PUT $1/.kibana -u elastic:changeme --data-binary "@kibana_mapping.json" -H "Expect:")
+if [ 0 -eq $? ] && [ $es_response = "200" ]; then
+echo "Loading Kibana mapping...OK"
+es_response=$(curl -s --w "%{http_code}" -o /dev/null -X POST $1/_bulk -u elastic:changeme --data-binary "@kibana.json" -H "Expect:")
+if [ 0 -eq $? ] && [ $es_response = "200" ]; then
+echo "Loading default indexes...OK"
+else
+echo "Loading Kibana mapping...FAILED"
+fi
+fi
