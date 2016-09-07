@@ -2,8 +2,11 @@
 	This is a docker-compose based deployment for the three products for the 5.0 release.  
 	There are some cool features like Metricbeat product, kibana dashboards, security, 
 	and watches that a user can experiment with.
-	
-#Usage
+
+# Git Submodules
+	This project uses submodules so when you clone use _git clone --recursive_
+		
+# Usage
 
 	make initial-run
 		Wait for a few kibana log lines to end, less then 1-2 mins, then Ctrl-C to stop.
