@@ -4,7 +4,7 @@
 	and watches that a user can experiment with.
 
 # Git Submodules
-	This project uses submodules so when you clone use **git clone --recursive**
+This project uses submodules so when you clone use **git clone --recursive**
 		
 # Usage
 
