@@ -10,5 +10,10 @@ fi
 
 es_resp_role=$(curl -s --w "%{http_code}" -o /dev/null -X POST $1/_xpack/security/role/limit -u elastic:changeme --data-binary "@add_role.json" "Expect:")
 if [ 0 -eq $? ] && [ $es_resp_role = "200" ]; then
-echo "------------ Added Role...OK"
+echo "------------ Added Limit Role...OK"
+fi
+
+es_resp_kb_role=$(curl -s --w "%{http_code}" -o /dev/null -X POST $1/_xpack/security/role/limit -u elastic:changeme --data-binary "@add_kb_role.json" "Expect:")
+if [ 0 -eq $? ] && [ $es_resp_kb_role = "200" ]; then
+echo "------------ Added Kibana UI Role...OK"
 fi
