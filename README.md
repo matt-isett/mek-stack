@@ -9,7 +9,8 @@ This project uses submodules; use **git clone --recursive**
 # Usage
 
 	make initial-run
-		Wait for a few kibana log lines to end, less then 1-2 mins, then Ctrl-C to stop.
+		Wait for about one minute, looking for a log like: mekstack_dashboard_1 exited with code 0
+		Then Ctrl-C to stop in the terminal, or docker-compose stop
 	make run-mek-stack
 
 	Log into Kibana at Docker default IP:9200 with elastic and changeme
