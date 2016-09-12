@@ -45,6 +45,7 @@ services:
 
   metricbeat:
     build: docker-metricbeat
+    hostname: MySQL_Server_1
     links:
       - elasticsearch
 
