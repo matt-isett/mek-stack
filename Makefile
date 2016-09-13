@@ -27,6 +27,6 @@ run-es-single: pull-latest-baseimage
 initial-run: pull-latest-baseimage
 	ES_NODE_COUNT=1 docker-compose up --build elasticsearch load-data watch dashboard
 
-run-mek-stack:       
+quick-start-stack:
 	ES_NODE_COUNT=1 docker-compose up --build elasticsearch kibana metricbeat
 
